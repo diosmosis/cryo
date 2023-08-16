@@ -1,0 +1,17 @@
+# Copyright (c) 2010 dizzy
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or www.boost.org/LICENSE_1_0.txt)
+
+project cryo/doc ;
+
+import boostbook : boostbook ;
+using quickbook ;
+
+path-constant images_location : html ;
+
+boostbook quickbook
+    :
+        cryo.qbk
+    :
+    ;
+

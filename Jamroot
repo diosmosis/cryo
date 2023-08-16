@@ -1,0 +1,12 @@
+#
+# cryo Jamroot
+#
+
+# Copyright (c) 2010 dizzy
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or www.boost.org/LICENSE_1_0.txt)
+
+path-constant BOOST_ROOT : ../boost ;
+path-constant SQLITE_V3_ROOT : ../sqlite ;
+path-constant MYSQL_ROOT : "C:/Program Files/MySQL/MySQL Server 5.1" ;
+path-constant CRYO_ROOT : . ;

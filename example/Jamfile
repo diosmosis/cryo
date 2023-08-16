@@ -1,0 +1,11 @@
+#
+# cryo examples Jamfile
+#
+
+# Copyright (c) 2010 dizzy
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or www.boost.org/LICENSE_1_0.txt)
+
+project cryo/examples
+    ;
+

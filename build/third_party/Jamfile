@@ -1,0 +1,32 @@
+#
+# cryo third-party Jamfile
+#
+
+# Copyright (c) 2010 dizzy
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or www.boost.org/LICENSE_1_0.txt)
+
+project cryo/third-party
+    ;
+
+lib sqlite3
+    : $(SQLITE_V3_ROOT)/sqlite3.c
+    : # requirements
+	  <include>$(SQLITE_V3_ROOT)
+	  <def-file>$(SQLITE_V3_ROOT)/sqlite3.def
+	  <define>SQLITE_ENABLE_COLUMN_METADATA
+      <define>SQLITE_ENABLE_RTREE
+    : # default-build
+    : # usage-requirments
+      <include>$(SQLITE_V3_ROOT)
+    ;
+
+lib mysql
+    :
+    : # requirements
+      <toolset>msvc:<file>$(MYSQL_ROOT)/bin/libmySQL.dll
+      <toolset>msvc:<file>$(MYSQL_ROOT)/lib/opt/libmysql.lib
+    : # default-build
+    : # usage-requirements
+      <include>$(MYSQL_ROOT)/include
+    ;

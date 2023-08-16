@@ -1,0 +1,32 @@
+#
+# cryo test suite jamfile
+#
+
+# Copyright (c) 2010 dizzy
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or www.boost.org/LICENSE_1_0.txt)
+
+import feature ;
+import testing ;
+
+project cryo/test
+    : requirements
+      <library>/boost/test//boost_unit_test_framework/<link>static
+      <library>/boost/system//boost_system
+      <define>BOOST_SYSTEM_NO_LIB
+      <toolset>msvc:<define>_SCL_SECURE_NO_WARNINGS
+    ;
+
+test-suite "cryo" :
+    [ run create_find_sql.cpp ]
+    [ run create_count_sql.cpp ]
+    [ run create_delete_sql.cpp ]
+    [ run create_insert_sql.cpp ]
+    [ run create_update_sql.cpp ]
+    [ run create_table_sql.cpp ]
+    ;
+
+test-suite "cryo-backend" :
+    [ run mysql.cpp /cryo//cryo_mysql : : : <define>CRYO_MYSQL_USER=root <define>CRYO_MYSQL_PWD=admin ]
+    [ run sqlite.cpp /cryo//cryo_sqlite /boost/filesystem ]
+    ;
